@@ -272,25 +272,6 @@ class Posts_API {
             });
         });
     }
-    static async RegisterUserName(user) {
-        this.initHttpState();  
-        return new Promise((resolve) => {
-            $.ajax({
-                url: "http://localhost:5000/userNames/register",  
-                type: "POST",  
-                contentType: "application/json", 
-                
-                data: JSON.stringify(user),  
-                success: (response) => {
-                    resolve(response);  
-                },
-                error: (xhr) => {
-                    this.setHttpErrorState(xhr); 
-                    resolve(null);  
-                }
-            });
-        });
-    }
     static async HEAD() {
         Posts_API.initHttpState();
         return new Promise(resolve => {
